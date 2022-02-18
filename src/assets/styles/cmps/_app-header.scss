@@ -1,0 +1,31 @@
+.header-container {
+    // background-color: black;
+    // color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 80px;
+    width: 100%;
+    z-index: 10;
+    transition: 0.3s;
+    color: #292929;
+    background-color: white;
+    box-shadow: 0 5px 7px 0 rgb(0 0 0 / 5%);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-logo {
+        font-size: 1.8em;
+
+    }
+    .header-nav {
+        display: flex;
+        gap: 20px;
+
+    }
+}
+
+
