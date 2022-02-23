@@ -44,7 +44,21 @@ export class LauncheList extends React.Component {
 
     hendlePaginate = (ev) => {
         const { currPage, maxPage } = this.state
-        let goToPage = (ev.target.name === 'next') ? currPage + 1 : currPage - 1
+        let goToPage
+        switch (ev.type) {
+            case 'change':
+                // console.log(ev.target.value)
+                goToPage = ev.target.value
+                
+                break;
+            case 'click':
+                
+                goToPage = (ev.target.name === 'next') ? currPage + 1 : currPage - 1
+                break;
+        
+            default:
+                break;
+        }
         if (!goToPage || goToPage > maxPage) return
 
         this.setState((prevState) => ({ ...prevState, currPage: goToPage }))
@@ -62,17 +76,27 @@ export class LauncheList extends React.Component {
                 break;
             case 2:
                 filterBy = 'failed'
-                this.setState((prevState) => ({ ...prevState, currPage: 1 }))
                 break;
 
             default:
                 break;
         }
+        this.setState((prevState) => ({ ...prevState, currPage: 1 }))
         this.loadLaunches(filterBy)
     }
 
+    getPageOptions = () => {
+        const { maxPage } = this.state
+        let pageOptions = []
+        for (let i = 1; i <= maxPage; i++) {
+            pageOptions.push(i)
+        }
+        return pageOptions
+    }
+
     render() {
-        const { currPage, filterdLaunches,itemsInPage } = this.state
+        const { currPage, filterdLaunches, itemsInPage } = this.state
+        const pageOptions = this.getPageOptions()
         let pageLaunches
         if (filterdLaunches) {
             pageLaunches = filterdLaunches.filter((launche, idx) => {
@@ -83,22 +107,35 @@ export class LauncheList extends React.Component {
 
         return (
             <React.Fragment>
-                <div className="filterBy">
+                <div className="action-container">
 
-                    <label htmlFor="filterBy">Filter by:</label>
-                    <select name="filterBy" id="filterBy" onChange={(ev) => this.hendleFilterBy(ev)}>
-                        <option value="all">All</option>
-                        <option value="succeed">Succeed</option>
-                        <option value="failed">Failed</option>
-                    </select>
+                    <div className="filter-container">
+
+                        <label htmlFor="filter">Filter by:</label>
+                        <select name="filter" id="filter" onChange={(ev) => this.hendleFilterBy(ev)}>
+                            <option value="all">All</option>
+                            <option value="succeed">Succeed</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                    </div>
+                    <div className="paginate-container">
+
+                        <label htmlFor="paginate">Page: </label>
+                        <select name="paginate" id="paginate" onChange={(ev) => this.hendlePaginate(ev)}>
+                            {pageOptions &&
+                                pageOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+
+                        </select>
+                    </div>
                 </div>
+
                 <section className="launche-list card-grid">
                     {!pageLaunches && <h1>Loading...</h1>}
 
                     {pageLaunches && pageLaunches.map(launche => <LaunchePreview key={launche.id} launche={launche} />)}
                 </section>
                 <div className="full">
-                    <div className="paginate main-container">
+                    <div className="paginate-bar main-container">
                         <button name='previous' onClick={(ev) => this.hendlePaginate(ev)}>↩ previous</button>
                         <p>Page: {currPage}</p>
                         <button name='next' onClick={(ev) => this.hendlePaginate(ev)}>next ↪</button>

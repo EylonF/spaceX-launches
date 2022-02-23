@@ -4,16 +4,21 @@
         margin: 30px 0px 0px;
         text-align: center;
     }
-    .filterBy {
-        margin-top: 30px;
-        label {
-            margin-inline-end: 15px;
+    .action-container {
+        display: flex;
+        margin: 30px 0px 20px;
+        justify-content: space-between;
+        .filter-container,
+        .paginate-container {
+            label {
+                margin-inline-end: 15px;
+            }
         }
     }
     .launche-list {
         margin-top: 30px;
     }
-    .paginate {
+    .paginate-bar {
         margin: 70px 0px 0px;
         padding: 20px 40px;
         display: flex;
@@ -25,9 +30,8 @@
         button {
             font-size: 1.6rem;
             background-color: #fff;
-            border:none;
+            border: none;
             font-family: cereal-book;
         }
     }
 }
-
