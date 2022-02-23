@@ -1,0 +1,28 @@
+.launche-details {
+    background-color: #2b4f7115;
+    .info-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 50px;
+        h1 {
+            margin: 0px;
+        }
+        h2 {
+            margin: 20px 0 0;
+        }
+        h4 {
+            margin: 10px 0 0;
+            display: flex;
+            gap: 5px;
+        }
+        p {
+            margin: 15px 0 0;
+        }
+        img {
+            width: 50%;
+            object-fit: contain;
+            padding: 5px;
+        }
+    }
+}

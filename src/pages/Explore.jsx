@@ -1,5 +1,5 @@
 import React from 'react'
-import { getLaunches } from '../services/axios.service.js'
+import { launcheService } from '../services/launche.service.js'
 import { LauncheList } from '../cmps/explore/LauncheList.jsx'
 
 
@@ -21,14 +21,13 @@ export class Explore extends React.Component {
     }
 
     onGetLaunches = async () => {
-        const launches = await getLaunches()
+        const launches = await launcheService.getLaunches()
         this.setState({ launches })
     }
 
     render() {
         const { launches } = this.state
 
-        // if (!launches) return <h1>Loading...</h1>
         return (
             <section className="explore-page main-container page">
                 <h1>spaceX launches </h1>

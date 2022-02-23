@@ -1,6 +1,11 @@
 const axios = require('axios').default;
 
-export async function getLaunches() {
+export const launcheService = {
+    getLaunches,
+    getLauncheById
+}
+
+async function getLaunches() {
     try {
         let entities = JSON.parse(localStorage.getItem('launchesDB'))
         if (!entities) {
@@ -16,8 +21,8 @@ export async function getLaunches() {
     }
 }
 
-export async function getLauncheById(launcheId) {
+async function getLauncheById(launcheId) {
     const launches = await getLaunches()
-    const launche = launches.find(launche => launche.id === launcheId)
-    return launche
+    return launches.find(launche => launche.id === launcheId)
+
 }

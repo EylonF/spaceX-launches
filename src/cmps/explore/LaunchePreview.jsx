@@ -8,7 +8,7 @@ import { utilService } from '../../services/util.service.js'
 function _LaunchePreview({ launche,history }) {
 
     const launcheDate = utilService.getDateFromTimeStemp(launche.date_unix)
-
+const launcheStatus = (launche.success)?'succeed':'failed'
     return (
         <article className=" launche-preview-card" onClick={() => {
             history.push(`/explore/${launche.id}`)
@@ -16,8 +16,11 @@ function _LaunchePreview({ launche,history }) {
             <img src={launche.links.patch.small} alt="" />
             <div className="launche-preview-info">
                <h2>{launche.name}</h2>
+
+               <div className="date-status-cntainer">
                <p className="launche-date">{launcheDate}</p>
-               <small className="launche-status">{launche.success?'succeed':'failed'}</small>
+               <small className={`launche-status ${launcheStatus}`}>{launcheStatus}</small>
+               </div>
             </div>
         </article>
     )

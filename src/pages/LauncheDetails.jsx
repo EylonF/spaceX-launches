@@ -1,5 +1,5 @@
 import React from 'react'
-import { getLauncheById } from '../services/axios.service.js'
+import { launcheService } from '../services/launche.service.js'
 import { utilService } from '../services/util.service.js'
 
 
@@ -15,7 +15,7 @@ export class LauncheDetails extends React.Component {
     }
 
     loadLaunche = async (launcheId) => {
-        const launche = await getLauncheById(launcheId)
+        const launche = await launcheService.getLauncheById(launcheId)
         console.log(launche)
         this.setState({ launche })
     }
@@ -26,8 +26,10 @@ export class LauncheDetails extends React.Component {
         if (!launche) return <h1>Loading...</h1>
         const launcheDate = utilService.getDateFromTimeStemp(launche.date_unix)
         return (
-            <section className="launche-details-page main-container page">
-                <div className="launche-preview-info">
+            <section className="launche-details main-container page">
+                <div className="info-container">
+
+                <div className="launche-info">
                     <h1>{launche.name}</h1>
                     <h2>flight number: {launche.flight_number}</h2>
                     <h4>
@@ -37,7 +39,8 @@ export class LauncheDetails extends React.Component {
                     </h4>
                     <p className="launche-status">{launche.details}</p>
                 </div>
-                <img src={launche.links.patch.small} alt="" />
+                <img src={launche.links.patch.large} alt="" />
+                </div>
 
             </section>
         )
