@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/spaceX-launches/static/css/main.571725bf.css",
+    "main.js": "/spaceX-launches/static/js/main.5f940df4.js",
+    "static/media/Montserrat-Regular.ttf": "/spaceX-launches/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/AirbnbCerealBook.woff": "/spaceX-launches/static/media/AirbnbCerealBook.d42c6a4d011ab55732b2.woff",
+    "static/media/AirbnbCerealBold.woff": "/spaceX-launches/static/media/AirbnbCerealBold.f286ae85c8aca0aeaa50.woff",
+    "static/media/AirbnbCerealLight.woff": "/spaceX-launches/static/media/AirbnbCerealLight.b23120006d8eb043d64a.woff",
+    "static/media/Circular.otf": "/spaceX-launches/static/media/Circular.0cea81af04a7c6961f54.otf",
+    "static/media/AirbnbCerealBlack.woff": "/spaceX-launches/static/media/AirbnbCerealBlack.1b848ef9b3436723dff6.woff",
+    "index.html": "/spaceX-launches/index.html",
+    "main.571725bf.css.map": "/spaceX-launches/static/css/main.571725bf.css.map",
+    "main.5f940df4.js.map": "/spaceX-launches/static/js/main.5f940df4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.571725bf.css",
+    "static/js/main.5f940df4.js"
+  ]
+}
