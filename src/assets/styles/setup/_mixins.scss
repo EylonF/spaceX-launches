@@ -39,6 +39,12 @@
     minmax(auto, $max)
     minmax($layoutPadding, 1fr);
 }
+@mixin mobileLayoutGTC($max) {
+  grid-template-columns:
+    minmax($layoutPaddingNarrow, 1fr)
+    minmax(auto, $max)
+    minmax($layoutPaddingNarrow, 1fr);
+}
 
 /* Media  Mixins */
 // @mixin aspect-ratio($width, $height) {
@@ -85,9 +91,6 @@
     object-fit: cover;
   }
 }
-
-
-
 
 // Mixin for removing hover efects on iphone screen
 @mixin hover-supported {
