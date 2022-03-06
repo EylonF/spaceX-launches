@@ -22,6 +22,7 @@ export class Explore extends React.Component {
 
     onGetLaunches = async () => {
         const launches = await launcheService.getLaunches()
+        console.log('launches:',launches)
         this.setState({ launches })
     }
 

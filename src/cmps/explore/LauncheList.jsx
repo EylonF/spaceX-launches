@@ -6,7 +6,7 @@ export class LauncheList extends React.Component {
     state = {
         currPage: 1,
         filterdLaunches: null,
-        itemsInPage: 20,
+        itemsInPage: 5,
         maxPage: null
     }
 
