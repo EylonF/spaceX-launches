@@ -5,7 +5,6 @@ $clr2: #484848;
 $clr3: #ffffff;
 $clr4: #222222;
 
-
 // LAYOUT
 $layoutPaddingNarrow: 10px;
 $layoutPadding: 40px;
@@ -15,11 +14,11 @@ $layoutPaddingWide: 80px;
 $break-narrow: 460px;
 $break-normal: 720px;
 $break-wide: 960px;
-$break-desktop:1100px;
-$break-huge:1600px;
+$break-desktop: 1100px;
+$break-huge: 1600px;
 
-$padded-break-narrow: $break-narrow + $layoutPadding * 2;
-$padded-break-normal: $break-normal + $layoutPadding * 2;
-$padded-break-wide: $break-wide + $layoutPadding * 2;
-$padded-break-desktop: $break-desktop + $layoutPadding * 2;
-$padded-break-huge: $break-huge + $layoutPaddingWide * 2;
+$padded-break-narrow: $break-narrow + $layoutPaddingNarrow * 2;
+$padded-break-normal: $break-normal + $layoutPaddingNarrow * 2;
+$padded-break-wide: $break-wide + $layoutPaddingNarrow * 2;
+$padded-break-desktop: $break-desktop + $layoutPaddingNarrow * 2;
+$padded-break-huge: $break-huge + $layoutPadding * 2;
