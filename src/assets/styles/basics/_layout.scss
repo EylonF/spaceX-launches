@@ -1,6 +1,6 @@
 .main-container {
   display: grid;
-  grid-template-columns: $layoutPaddingNarrow 1fr $layoutPaddingNarrow;
+  grid-template-columns: $layoutPadding 1fr $layoutPadding;
 
   > * {
     grid-column: 2;
@@ -40,7 +40,7 @@
   grid-template-columns: repeat(auto-fill, 280px);
   gap: 50px;
   justify-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   // grid-auto-rows: 300px;
 
   img {

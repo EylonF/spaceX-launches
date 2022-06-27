@@ -1,10 +1,11 @@
 .launche-preview-card {
-    background: linear-gradient(0deg, #ffffffe0 1%, #ffffffb2 5%, #ffffff81 30%, rgba(255, 255, 255, 0) 80%);
+    background: linear-gradient(0deg, #ffffff 1%, #fffffff5 5%, #ffffffc9 30%, rgba(255, 255, 255, 0.075) 80%);
     border-radius: 5px;
     padding: 20px;
     transition: 0.5s;
     cursor: pointer;
     border-bottom: 1px solid #292929a2;
+    color: #000;
     .launche-preview-info {
         h2 {
             margin: 15px 0px;
@@ -14,21 +15,20 @@
             justify-content: space-between;
             align-items: flex-end;
         }
-        .launche-status{
+        .launche-status {
             font-size: 0.85rem;
-            &.succeed{
+            &.succeed {
                 color: green;
             }
-            &.failed{
+            &.failed {
                 color: red;
             }
         }
-
     }
 }
 
-.launche-preview-card:hover{
+.launche-preview-card:hover {
     // padding: 30px;
     transform: scale(105%);
     box-shadow: 0 0 12px 1px #29292963;
-}    
+}
