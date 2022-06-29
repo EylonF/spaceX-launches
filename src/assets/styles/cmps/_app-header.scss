@@ -47,14 +47,54 @@
         display: flex;
         // gap: 30px;
         color: #fff;
+        padding: 0px 30px;
+        font-size: 1.8rem;
+        font-weight: 600;
         a {
             padding: 0px 30px;
             font-size: 1.2rem;
             font-weight: 600;
         }
+        a:hover {
+            text-shadow: 0px 0px 4px;
+        }
+        &.active {
+            text-shadow: 0px 0px 4px;
+        }
+        &.hamburger:hover {
+            text-shadow: 0px 0px 4px;
+            cursor: pointer;
+        }
+    }
+    .header-nav-modal {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 40px;
+        color: #000;
+        background-color: #fff;
+        border: 1px solid #000;
+        box-shadow: 0px 0px 8px;
+        a {
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        a:hover {
+            background-color: lightgrey;
+        }
     }
 
     .header-nav a:not(:first-child) {
         border-left: 1px solid #fff;
+    }
+}
+
+@include for-mobile-layout {
+    .header .header-logo .logo-svg {
+        display: block;
+        width: 200px;
+        height: 25px;
     }
 }

@@ -1,9 +1,91 @@
 .about-page {
+    p {
+        text-align: justify;
+        padding-inline: 15px;
+        line-height: 24px;
+        font-size: 1.2rem;
+    }
+    h1 {
+        margin-bottom: 30px;
+        background-color: #000;
+        color: #fff;
+        padding: 5px 10px;
+    }
+}
+@include for-mobile-layout {
     .about-content {
-        // width: 100%;
-        // background-color: aqua;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        margin-top: 100px;
+    }
+    .about-me {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .about-project {
+        margin-block: 30px;
     }
     img {
-        width: 25%;
+        height: 250px;
+        width: 250px;
+    }
+}
+@include for-narrow-layout {
+    .about-content {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .about-me {
+        width: 100%;
+        display: flex;
+        gap: 30px;
+    }
+    .about-project {
+        position: relative;
+        align-self: flex-start;
+        margin-top: 30px;
+    }
+    img {
+        height: 250px;
+        width: 250px;
+    }
+}
+@include for-normal-layout {
+    .about-project {
+        left: 420px;
+        position: absolute;
+        transform: translateY(280px);
+    }
+    img {
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@include for-desktop-layout {
+    .about-content {
+        flex-direction: row;
+        // justify-content: center;
+    }
+    .about-me {
+        width: 66%;
+        display: flex;
+        gap: 3%;
+    }
+    .about-project {
+        position: relative;
+        left: 0px;
+        transform: translateY(0);
+        padding: 0px 3%;
+        height: 450px;
+        align-self: center;
+        margin-top: 0;
+    }
+    img {
+        width: 450px;
+        height: 450px;
     }
 }

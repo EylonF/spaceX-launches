@@ -35,13 +35,13 @@
 
 @mixin layoutGTC($max) {
   grid-template-columns:
-    // minmax($layoutPadding, 1fr)
-    // minmax(auto, $max)
-    // minmax($layoutPadding, 1fr);
+    minmax(1fr, $layoutPadding)
+    minmax(auto, $max)
+    minmax(1fr, $layoutPadding);
 
-    $layoutPadding
-    1fr
-    $layoutPadding;
+  // $layoutPadding
+  // 1fr
+  // $layoutPadding;
 }
 @mixin mobileLayoutGTC($max) {
   grid-template-columns:

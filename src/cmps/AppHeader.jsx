@@ -2,18 +2,22 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 class _AppHeader extends React.Component {
+  state = {
+    isNavOpen: false,
+  };
+
+  toggleNav = () => {
+    this.setState((prevState) => ({ isNavOpen: !prevState.isNavOpen }));
+  };
+
   render() {
+    const { isNavOpen } = this.state;
+    console.log(isNavOpen);
     return (
       <section className="main-container header-container full">
         <div className="header">
           <Link className="header-logo" to="/" id="logo">
-            <svg
-              className="logo-svg"
-              version="1.1"
-              x="0px"
-              y="30px"
-              viewbox="0 0 400 50"
-            >
+            <svg className="logo-svg" viewBox="0 0 400 50">
               <title>SpaceX Logo</title>
               <g className="letter_s letter">
                 <path
@@ -26,7 +30,7 @@ class _AppHeader extends React.Component {
                 <path
                   className="fill-white"
                   d="M91.8,18.6H59v30.7h9.3V37.5h24.2c6.7,0,10.4-2.3,10.4-7.7v-3.4C102.8,21.4,98.6,18.6,91.8,18.6z M94.8,28.4
-          c0,2.2-0.4,3.4-4,3.4H68.3l0.1-8h22c4,0,4.5,1.2,4.5,3.3V28.4z"
+                c0,2.2-0.4,3.4-4,3.4H68.3l0.1-8h22c4,0,4.5,1.2,4.5,3.3V28.4z"
                 />
               </g>
               <g className="letter_a letter">
@@ -39,7 +43,7 @@ class _AppHeader extends React.Component {
                 <path
                   className="fill-white"
                   d="M171.4,23.9h34.8c-0.9-3.6-4.4-5.4-9.4-5.4h-26c-4.5,0-8.8,1.8-8.8,6.7v17.2c0,4.9,4.3,6.7,8.8,6.7h26.3
-          c6,0,8.1-1.7,9.1-5.8h-34.8V23.9z"
+                c6,0,8.1-1.7,9.1-5.8h-34.8V23.9z"
                 />
               </g>
               <g className="letter_e letter">
@@ -78,14 +82,36 @@ class _AppHeader extends React.Component {
             <div className="logo">spaceX</div>
           </Link> */}
 
-          <div className="header-nav">
-            <Link className="btn-explore clean-link" to="/explore">
-              ALL LAUNCHES
-            </Link>
-            <Link className="btn-about clean-link" to="/about">
-              About
-            </Link>
-          </div>
+          {window.innerWidth < 800 && (
+            <div
+              className={`header-nav hamburger ${isNavOpen ? "active" : ""}`}
+              onClick={() => this.toggleNav()}
+            >
+              ≡
+            </div>
+          )}
+
+          {isNavOpen && (
+            <div className="header-nav-modal">
+              <Link className="btn-explore clean-link" to="/explore">
+                ALL LAUNCHES
+              </Link>
+              <Link className="btn-about clean-link" to="/about">
+                ABOUT
+              </Link>
+            </div>
+          )}
+
+          {window.innerWidth >= 800 && (
+            <div className="header-nav">
+              <Link className="btn-explore clean-link" to="/explore">
+                ALL LAUNCHES
+              </Link>
+              <Link className="btn-about clean-link" to="/about">
+                ABOUT
+              </Link>
+            </div>
+          )}
         </div>
       </section>
     );
