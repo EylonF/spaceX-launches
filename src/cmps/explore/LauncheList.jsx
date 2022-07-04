@@ -1,6 +1,7 @@
 import React from "react";
 
 import { LaunchePreview } from "./LaunchePreview.jsx";
+import { InputSelect } from "../InputSelect.jsx";
 
 export class LauncheList extends React.Component {
   state = {
@@ -20,6 +21,9 @@ export class LauncheList extends React.Component {
     if (filterBy) {
       filterdLaunches = this.props.launches.filter((launche) => {
         switch (filterBy) {
+          case "all":
+            return launche;
+            break;
           case "succeed":
             if (launche.success) return launche;
             break;
@@ -63,26 +67,7 @@ export class LauncheList extends React.Component {
     this.setState((prevState) => ({ ...prevState, currPage: goToPage }));
   };
 
-  hendleFilterBy = (ev) => {
-    const { selectedIndex } = ev.target.options;
-    let filterBy;
-    switch (selectedIndex) {
-      case 0:
-        filterBy = null;
-        break;
-      case 1:
-        filterBy = "succeed";
-        break;
-      case 2:
-        filterBy = "failed";
-        break;
-      case 3:
-        filterBy = "upcoming";
-        break;
-
-      default:
-        break;
-    }
+  hendleFilterBy = (filterBy) => {
     this.setState((prevState) => ({ ...prevState, currPage: 1 }));
     this.loadLaunches(filterBy);
   };
@@ -91,7 +76,7 @@ export class LauncheList extends React.Component {
     const { maxPage } = this.state;
     let pageOptions = [];
     for (let i = 1; i <= maxPage; i++) {
-      pageOptions.push(i);
+      pageOptions.push([i, i]);
     }
     return pageOptions;
   };
@@ -109,38 +94,26 @@ export class LauncheList extends React.Component {
           return launche;
       });
     }
+    const filterByOptions = [
+      ["all", "ALL"],
+      ["succeed", "Succeed"],
+      ["failed", "Failed"],
+      ["upcoming", "Upcoming"],
+    ];
 
     return (
       <React.Fragment>
         <div className="action-container">
-          <div className="filter-container">
-            <label htmlFor="filter">Filter by:</label>
-            <select
-              name="filter"
-              id="filter"
-              onChange={(ev) => this.hendleFilterBy(ev)}
-            >
-              <option value="all">All</option>
-              <option value="succeed">Succeed</option>
-              <option value="failed">Failed</option>
-              <option value="upcoming">upcoming</option>
-            </select>
-          </div>
-          <div className="paginate-container">
-            <label htmlFor="paginate">Page: </label>
-            <select
-              name="paginate"
-              id="paginate"
-              onChange={(ev) => this.hendlePaginate(ev)}
-            >
-              {pageOptions &&
-                pageOptions.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-            </select>
-          </div>
+          <InputSelect
+            label="Filter By"
+            handleChange={this.hendleFilterBy}
+            options={filterByOptions}
+          />
+          <InputSelect
+            label="Page"
+            handleChange={this.hendlePaginate}
+            options={pageOptions}
+          />
         </div>
 
         <section className="launche-list card-grid">
