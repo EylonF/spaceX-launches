@@ -28,8 +28,10 @@ export function About() {
         <div className="about-project flex column ">
           <h1>About The Project:</h1>
           <p>
-            Created with React.js framework, Sass (SCSS) for style and
-            javescript for implementation of filtering and pagination.
+            A responsive frontend web-app, created with React.js framework, Sass
+            (SCSS) for style and javescript for implementation of filtering and
+            pagination. Getting the launches data from SpaceX API and using
+            Window.sessionStorage for caching it.
           </p>
         </div>
       </div>

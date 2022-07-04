@@ -12,10 +12,12 @@ class _AppHeader extends React.Component {
 
   render() {
     const { isNavOpen } = this.state;
-    console.log(isNavOpen);
+    const navClass = isNavOpen ? "nav-open" : "";
+
+    // console.log(isNavOpen);
     return (
       <section className="main-container header-container full">
-        <div className="header">
+        <div className={`header ${navClass}`}>
           <Link className="header-logo" to="/" id="logo">
             <svg className="logo-svg" viewBox="0 0 400 50">
               <title>SpaceX Logo</title>
@@ -112,6 +114,7 @@ class _AppHeader extends React.Component {
               </Link>
             </div>
           )}
+          <div className="main-screen" onClick={() => this.toggleNav()}></div>
         </div>
       </section>
     );
