@@ -1,0 +1,111 @@
+/* Media queries Breakpoint mixins */
+@mixin for-mobile-layout {
+  @media (max-width: $padded-break-narrow) {
+    @content;
+  }
+}
+
+@mixin for-narrow-layout {
+  @media (min-width: $padded-break-narrow) {
+    @content;
+  }
+}
+
+@mixin for-normal-layout {
+  @media (min-width: $padded-break-normal) {
+    @content;
+  }
+}
+
+@mixin for-wide-layout {
+  @media (min-width: $padded-break-wide) {
+    @content;
+  }
+}
+@mixin for-desktop-layout {
+  @media (min-width: $padded-break-desktop) {
+    @content;
+  }
+}
+@mixin for-huge-layout {
+  @media (min-width: $padded-break-huge) {
+    @content;
+  }
+}
+
+@mixin layoutGTC($max) {
+  grid-template-columns:
+    minmax(1fr, $layoutPadding)
+    minmax(auto, $max)
+    minmax(1fr, $layoutPadding);
+
+  // $layoutPadding
+  // 1fr
+  // $layoutPadding;
+}
+@mixin mobileLayoutGTC($max) {
+  grid-template-columns:
+    minmax($layoutPaddingNarrow, 1fr)
+    minmax(auto, $max)
+    minmax($layoutPaddingNarrow, 1fr);
+}
+
+/* Media  Mixins */
+// @mixin aspect-ratio($width, $height) {
+//   position: relative;
+//   overflow: hidden;
+//   &::before {
+//     display: block;
+//     content: '';
+//     width: 100%;
+//   }
+//   // > * {
+//   //   position: absolute;
+//   //   inset: 0;
+//   // }
+
+//   > img {
+//     position: absolute;
+//     inset: 0;
+//     border-radius: 13px;
+//     height: 260px;
+//     width: 65%;
+//     object-fit: cover;
+//   }
+// }
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  > img {
+    height: 90%;
+    object-fit: cover;
+  }
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin clean-link {
+  text-decoration: none;
+  color: inherit;
+}

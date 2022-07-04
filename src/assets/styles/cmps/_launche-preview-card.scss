@@ -1,0 +1,41 @@
+.launche-preview-card {
+    background: linear-gradient(
+        0deg,
+        #ffffff1c 1%,
+        #ffffff25 5%,
+        #ffffff8e 30%,
+        rgba(255, 255, 255, 0.308) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    border-radius: 5px;
+    padding: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-bottom: 1px solid #292929a2;
+    color: rgb(255, 255, 255);
+    .launche-preview-info {
+        h2 {
+            margin: 15px 0px;
+        }
+        .date-status-cntainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .launche-status {
+            font-size: 0.85rem;
+            &.succeed {
+                color: green;
+            }
+            &.failed {
+                color: red;
+            }
+        }
+    }
+}
+
+.launche-preview-card:hover {
+    // padding: 30px;
+    transform: scale(105%);
+    box-shadow: 0 0 12px 1px #29292963;
+}

@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+// ::selection {
+//   background-color: lighten($clr1, 20%);
+//   color: $clr6;
+// }
+
+html {
+  font-family: D-din, montserrat, sans-serif;
+  // line-height: 1;
+}
+
+body {
+  margin: 0;
+  // background-image: url(../../images/cats-pattern-background_1425-90.jpg);
+  // background-attachment: fixed;
+  // background-size: 360px;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  margin: 0 0 em(20px, 50px);
+  //   font-family: caveat, serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: rem(40px);
+}
+
+p {
+  margin: 0;
+  max-width: 50ch;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+// main.grow{
+//   min-height: 80vh;
+// }
