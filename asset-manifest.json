@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/spaceX-launches/static/css/main.4e9f74c3.css",
-    "main.js": "/spaceX-launches/static/js/main.3d6503e6.js",
+    "main.css": "/spaceX-launches/static/css/main.b46e86e2.css",
+    "main.js": "/spaceX-launches/static/js/main.c00c16b0.js",
     "static/media/Montserrat-Regular.ttf": "/spaceX-launches/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/D-DIN.otf": "/spaceX-launches/static/media/D-DIN.31d456695bd8dea72c8a.otf",
     "static/media/AirbnbCerealBook.woff": "/spaceX-launches/static/media/AirbnbCerealBook.d42c6a4d011ab55732b2.woff",
@@ -10,11 +10,11 @@
     "static/media/Circular.otf": "/spaceX-launches/static/media/Circular.0cea81af04a7c6961f54.otf",
     "static/media/AirbnbCerealBlack.woff": "/spaceX-launches/static/media/AirbnbCerealBlack.1b848ef9b3436723dff6.woff",
     "index.html": "/spaceX-launches/index.html",
-    "main.4e9f74c3.css.map": "/spaceX-launches/static/css/main.4e9f74c3.css.map",
-    "main.3d6503e6.js.map": "/spaceX-launches/static/js/main.3d6503e6.js.map"
+    "main.b46e86e2.css.map": "/spaceX-launches/static/css/main.b46e86e2.css.map",
+    "main.c00c16b0.js.map": "/spaceX-launches/static/js/main.c00c16b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e9f74c3.css",
-    "static/js/main.3d6503e6.js"
+    "static/css/main.b46e86e2.css",
+    "static/js/main.c00c16b0.js"
   ]
 }
