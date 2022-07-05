@@ -18,7 +18,7 @@
         margin: 70px 0px 0px;
         padding: 20px 40px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         background-color: #fff;
         color: #000;
@@ -55,5 +55,11 @@
     }
     .MuiSelect-select {
         background-color: #fff;
+    }
+}
+
+@include for-mobile-layout {
+    .explore-page .paginate-bar {
+        padding: 20px 10px;
     }
 }

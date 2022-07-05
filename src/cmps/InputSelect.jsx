@@ -10,7 +10,7 @@ export function InputSelect({ handleChange, options, label }) {
   const _handleChange = (event) => {
     const { value } = event.target;
     setSelect(value);
-    handleChange(value);
+    handleChange(event, "change");
   };
 
   return (

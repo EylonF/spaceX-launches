@@ -18,16 +18,13 @@ export class LauncheList extends React.Component {
   loadLaunches = (filterBy = null) => {
     const { itemsInPage } = this.state;
     let filterdLaunches;
+    filterBy = filterBy === "all" ? null : filterBy;
     if (filterBy) {
       filterdLaunches = this.props.launches.filter((launche) => {
         switch (filterBy) {
-          case "all":
-            return launche;
-            break;
           case "succeed":
             if (launche.success) return launche;
             break;
-
           case "failed":
             if (!launche.success && !launche.upcoming) return launche;
             break;
@@ -46,10 +43,10 @@ export class LauncheList extends React.Component {
     this.setState((prevState) => ({ ...prevState, filterdLaunches, maxPage }));
   };
 
-  hendlePaginate = (ev) => {
+  hendlePaginate = (ev, type) => {
     const { currPage, maxPage } = this.state;
     let goToPage;
-    switch (ev.type) {
+    switch (type) {
       case "change":
         // console.log(ev.target.value)
         goToPage = ev.target.value;
@@ -67,7 +64,8 @@ export class LauncheList extends React.Component {
     this.setState((prevState) => ({ ...prevState, currPage: goToPage }));
   };
 
-  hendleFilterBy = (filterBy) => {
+  hendleFilterBy = (event) => {
+    const filterBy = event.target.value;
     this.setState((prevState) => ({ ...prevState, currPage: 1 }));
     this.loadLaunches(filterBy);
   };
@@ -126,11 +124,17 @@ export class LauncheList extends React.Component {
         </section>
         <div className="full">
           <div className="paginate-bar main-container">
-            <button name="previous" onClick={(ev) => this.hendlePaginate(ev)}>
+            <button
+              name="previous"
+              onClick={(ev) => this.hendlePaginate(ev, "click")}
+            >
               ↩ previous
             </button>
             <p>Page: {currPage}</p>
-            <button name="next" onClick={(ev) => this.hendlePaginate(ev)}>
+            <button
+              name="next"
+              onClick={(ev) => this.hendlePaginate(ev, "click")}
+            >
               next ↪
             </button>
           </div>
